@@ -1,0 +1,35 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: ribbon-app-client
+  redis: # spring-data-redis配置信息
+    host: 192.168.89.129 # 访问的redis地址， 默认localhost
+    port: 6379 # redis的端口，默认6379
+    database: 0  # 访问的redis的数据库编号， 默认0
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+
+ribbon-app-service: # 远程访问这个命名的服务
+  ribbon: # 底层Ribbon配置
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule # 就是具体的负载均衡策略类型全名
+    # listOfServers: localhost:8080  # 多个地址用逗号分隔。
+
+#ribbon: # 关闭Ribbon自动访问Eureka服务端。
+#  eureka:
+#    enabled: false
+
+hystrix: # 配置Hystrix相关信息
+  command: # 配置HystrixCommand相关内容
+    default: # 所有范围
+      execution:
+        timeout:
+          enabled: true # 使用Hystrix作为超时判定机制
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1000  # 具体的超时时间

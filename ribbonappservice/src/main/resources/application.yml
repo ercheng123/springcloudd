@@ -1,0 +1,11 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: ribbon-app-service
+
+eureka: # Eureka客户端，启动的时候，如果未配置Eureka服务端地址列表，则在localhost:8761注册
+  client:
+    service-url:  # 配置Eureka服务端地址，注册中心地址，多个地址使用逗号 ',' 分隔。
+      defaultZone: http://localhost:8761/eureka/
