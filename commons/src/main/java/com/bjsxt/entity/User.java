@@ -13,6 +13,7 @@ public class User implements Serializable {
     private String b;
     private String c;
     private String d;
+    private String e;
 
     @Override
     public String toString() {
