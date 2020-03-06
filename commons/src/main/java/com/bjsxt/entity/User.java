@@ -9,6 +9,7 @@ public class User implements Serializable {
     private String password;
     private String remark;
     private String name;
+    private String page;
 
     @Override
     public String toString() {
