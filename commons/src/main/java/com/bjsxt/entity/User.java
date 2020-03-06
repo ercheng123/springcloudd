@@ -10,7 +10,6 @@ public class User implements Serializable {
     private String remark;
     private String name;
     private String page;
-    private String b;
     private String c;
     private String d;
 
