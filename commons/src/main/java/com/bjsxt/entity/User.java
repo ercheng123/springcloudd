@@ -11,6 +11,7 @@ public class User implements Serializable {
     private String name;
     private String page;
     private String b;
+    private String d;
 
     @Override
     public String toString() {
