@@ -3,7 +3,7 @@ package com.bjsxt.userclient.service.impl;
 import com.bjsxt.entity.User;
 import com.bjsxt.userclient.service.UserService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
+import   com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import com.netflix.hystrix.contrib.javanica.conf.HystrixPropertiesManager;
 import com.netflix.loadbalancer.RandomRule;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -99,7 +99,6 @@ public class UserServiceImpl implements UserService {
         System.out.println("saveFallback方法执行：" + user);
         Map<String, Object> result = new HashMap<>();
         result.put("message", "服务器忙，请稍后重试！");
-        ArrayList
 
         return result;
     }
