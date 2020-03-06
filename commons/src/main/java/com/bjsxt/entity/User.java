@@ -10,6 +10,7 @@ public class User implements Serializable {
     private String remark;
     private String name;
     private String page;
+    private String b;
 
     @Override
     public String toString() {
